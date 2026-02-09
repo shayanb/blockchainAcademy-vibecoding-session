@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = '0x309C9208fA1212A9D8F982A58Fb1f31FABDE9535' as const; // TODO: Update after deployment
+export const CONTRACT_ADDRESS = '0x819928D1A3Bec396C8a306B6D3Ef4fD0c28F7289' as const; // TODO: Update after deployment
 
 export const CONTRACT_ABI = [
   {
