@@ -1,5 +1,6 @@
 import { useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { parseEther } from 'viem';
+import { sepolia } from 'wagmi/chains';
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from '../config/contract';
 
 export function useSubmitProject() {
@@ -16,6 +17,7 @@ export function useSubmitProject() {
       functionName: 'submitProject',
       args: [name, description],
       value: parseEther('0.1'),
+      chainId: sepolia.id,
     });
   };
 

@@ -1,4 +1,5 @@
 import { useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
+import { sepolia } from 'wagmi/chains';
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from '../config/contract';
 
 export function useDistribute() {
@@ -13,6 +14,7 @@ export function useDistribute() {
       address: CONTRACT_ADDRESS,
       abi: CONTRACT_ABI,
       functionName: 'distributePrize',
+      chainId: sepolia.id,
     });
   };
 

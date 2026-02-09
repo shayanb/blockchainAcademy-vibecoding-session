@@ -1,5 +1,6 @@
 import { useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { parseEther } from 'viem';
+import { sepolia } from 'wagmi/chains';
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from '../config/contract';
 
 export function useVote() {
@@ -16,6 +17,7 @@ export function useVote() {
       functionName: 'vote',
       args: [projectId],
       value: parseEther('0.01'),
+      chainId: sepolia.id,
     });
   };
 
