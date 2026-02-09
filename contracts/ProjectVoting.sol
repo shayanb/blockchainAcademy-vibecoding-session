@@ -7,7 +7,7 @@ contract ProjectVoting {
     // Constants
     uint256 public constant SUBMISSION_STAKE = 0.1 ether;
     uint256 public constant VOTE_COST = 0.01 ether;
-    uint256 public constant DEADLINE = 1739404740; // Feb 12, 2025, 23:59:00 UTC (Lisbon time)
+    uint256 public constant DEADLINE = 1770940740; // Feb 12, 2026, 23:59:00 UTC (Lisbon time)
 
     // Project structure
     struct Project {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { formatCountdown } from '../utils/formatters';
 
-const DEADLINE = 1739404740; // Feb 12, 2025, 23:59:00 UTC
+const DEADLINE = 1770940740; // Feb 12, 2026, 23:59:00 UTC
 
 export function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState<number>(0);

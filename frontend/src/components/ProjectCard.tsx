@@ -4,7 +4,7 @@ import { useVote } from '../hooks/useVote';
 import { useHasVoted } from '../hooks/useProjects';
 import type { Project } from '../hooks/useProjects';
 
-const DEADLINE = 1739404740;
+const DEADLINE = 1770940740; // Feb 12, 2026, 23:59:00 UTC
 
 interface ProjectCardProps {
   project: Project;

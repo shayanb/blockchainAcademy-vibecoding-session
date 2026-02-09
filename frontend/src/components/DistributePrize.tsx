@@ -3,7 +3,7 @@ import { usePrizeDistributed, useWinner, usePrizePool, useAllProjects } from '..
 import { useDistribute } from '../hooks/useDistribute';
 import { truncateAddress, formatEth } from '../utils/formatters';
 
-const DEADLINE = 1739404740;
+const DEADLINE = 1770940740; // Feb 12, 2026, 23:59:00 UTC
 
 export function DistributePrize() {
   const { address, isConnected } = useAccount();
