@@ -1,15 +1,14 @@
-import { useAccount, useConnect, useDisconnect, useSwitchChain, useChainId } from 'wagmi';
+import { useAccount, useConnect, useDisconnect, useSwitchChain } from 'wagmi';
 import { sepolia } from 'wagmi/chains';
 import { truncateAddress } from '../utils/formatters';
 
 export function ConnectWallet() {
-  const { address, isConnected } = useAccount();
+  const { address, isConnected, chain } = useAccount();
   const { connect, connectors, isPending } = useConnect();
   const { disconnect } = useDisconnect();
   const { switchChain, isPending: isSwitching } = useSwitchChain();
-  const chainId = useChainId();
 
-  const isWrongNetwork = isConnected && chainId !== sepolia.id;
+  const isWrongNetwork = isConnected && chain?.id !== sepolia.id;
 
   if (isConnected && isWrongNetwork) {
     return (

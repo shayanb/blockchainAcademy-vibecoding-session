@@ -1,12 +1,11 @@
-import { useAccount, useSwitchChain, useChainId } from 'wagmi';
+import { useAccount, useSwitchChain } from 'wagmi';
 import { sepolia } from 'wagmi/chains';
 
 export function NetworkWarning() {
-  const { isConnected } = useAccount();
+  const { isConnected, chain } = useAccount();
   const { switchChain, isPending } = useSwitchChain();
-  const chainId = useChainId();
 
-  const isWrongNetwork = isConnected && chainId !== sepolia.id;
+  const isWrongNetwork = isConnected && chain?.id !== sepolia.id;
 
   if (!isWrongNetwork) {
     return null;
@@ -16,7 +15,7 @@ export function NetworkWarning() {
     <div className="bg-bc-accent/90 text-white py-3 px-4">
       <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
         <span className="font-medium">
-          You're connected to the wrong network. Please switch to Sepolia Testnet.
+          Wrong network ({chain?.name || 'Unknown'}). Please switch to Sepolia Testnet.
         </span>
         <button
           onClick={() => switchChain({ chainId: sepolia.id })}
