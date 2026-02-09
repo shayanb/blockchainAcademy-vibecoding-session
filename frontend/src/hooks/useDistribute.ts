@@ -27,6 +27,7 @@ export function useDistribute() {
       abi: CONTRACT_ABI,
       functionName: 'distributePrize',
       chainId: sepolia.id,
+      gas: 500_000n,
     });
   };
 

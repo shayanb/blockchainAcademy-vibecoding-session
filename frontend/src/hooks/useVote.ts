@@ -30,6 +30,7 @@ export function useVote() {
       args: [projectId],
       value: parseEther('0.01'),
       chainId: sepolia.id,
+      gas: 200_000n,
     });
   };
 
